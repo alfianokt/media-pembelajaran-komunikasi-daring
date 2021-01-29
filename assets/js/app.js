@@ -18,31 +18,72 @@
     };
   });
 
-  document.querySelector('#menu-kd').addEventListener('click', ()=>{
-    document.querySelector('#app-title').classList.remove('titlemation');
+  const el_pages = {
+    home: document.querySelector('[data-page="home"]'),
+    kd: document.querySelector('[data-page="kd"]'),
+    materi: document.querySelector('[data-page="materi"]'),
+    tuts: document.querySelector('[data-page="tuts"]'),
+    evaluasi: document.querySelector('[data-page="evaluasi"]'),
+    credit: document.querySelector('[data-page="credit"]'),
+    dev: document.querySelector('[data-page="dev"]'),
+  };
 
+  const el_pages_title = {
+    home: "Komunikasi Dalam Jaringan",
+    kd: "Kurikulum Dasar",
+    materi: "Materi",
+    tuts: "Tutorial",
+    evaluasi: "Evaluasi",
+    credit: "Kredit Aplikasi",
+    dev: "Pengembang",
+  };
 
-    document.querySelector('#page-home').classList.remove('db');
-    document.querySelector('#page-home').classList.add('dn');
+  document.querySelectorAll('.menu-items-body').forEach(el => {
+    el.addEventListener('click', ()=>{
+      console.log(el,'Clicked', el.dataset.target);
 
-    document.querySelector('#page-kd').classList.remove('dn');
-    document.querySelector('#page-kd').classList.add('db');
+      document.querySelector('#app-title').innerText = el_pages_title[el.dataset.target];
 
-    document.querySelector('#page-kd').classList.remove('downup');
-    document.querySelector('#page-kd').classList.add('downup');
+      Object.keys(el_pages_title).forEach((el_page) => {
+
+        if (el_page == el.dataset.target) {
+          console.log(el_pages[el_page]);
+
+          // show page
+          el_pages[el_page].classList.remove('dn');
+          el_pages[el_page].classList.remove('down-to-up');
+
+          el_pages[el_page].classList.add('db');
+          el_pages[el_page].classList.add('down-to-up');
+        } else {
+          // hide page
+          el_pages[el_page].classList.remove('db');
+          el_pages[el_page].classList.add('dn');
+        }
+      });
+
+    });
   });
 
 
-  document.querySelector('.btn-back').addEventListener('click', ()=>{
-    document.querySelector('#app-title').innerText = 'Komunikasi Dalam Jaringan';
+  document.querySelectorAll('.btn-back').forEach(el => {
+    el.addEventListener('click', ()=>{
+      document.querySelector('#app-title').innerText = el_pages_title.home;
 
-    document.querySelector('#page-home').classList.remove('dn');
-    document.querySelector('#page-home').classList.add('db');
+      Object.keys(el_pages_title).forEach((el_page) => {
+        if (el_page == 'home') {
+          // show page
+          el_pages[el_page].classList.remove('dn');
+          el_pages[el_page].classList.remove('up-to-down');
 
-    document.querySelector('#page-kd').classList.remove('db');
-    document.querySelector('#page-kd').classList.add('dn');
-
-    document.querySelector('#page-home').classList.remove('updown');
-    document.querySelector('#page-home').classList.add('updown');
+          el_pages[el_page].classList.add('db');
+          el_pages[el_page].classList.add('up-to-down');
+        } else {
+          // hide page
+          el_pages[el_page].classList.remove('db');
+          el_pages[el_page].classList.add('dn');
+        }
+      });
+    });
   });
 })();
