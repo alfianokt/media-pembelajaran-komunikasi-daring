@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Komunikasi Dalam Jaringan | Media Interaktif</title>
   <meta name="description" content="Pembelajaran interaktif mapel SIMKOMDIG bab Komunikasi Dalam Jaringan">
+  <title>Komunikasi Dalam Jaringan | Media Interaktif</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&display=swap" rel="stylesheet">
@@ -14,14 +17,16 @@
 <body>
   <section>
     <div class="title">
-      <h1>Komunikasi Dalam Jaringan</h1>
+      <a href="/">
+        <h1 id="app-title">Komunikasi Dalam Jaringan</h1>
+      </a>
     </div>
 
-    <div class="content">
+    <!-- home -->
+    <div class="content" id="page-home">
       <div class="menu">
-        <div class="menu-items">
+        <div class="menu-items" id="menu-kd">
           <div class="menu-items-body">
-            <!-- <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/books_1f4da.png" alt="Icon Kurikulum Dasar"> -->
             <h1 class="moji">📚</h1>
             <h3>KD</h3>
           </div>
@@ -29,7 +34,6 @@
 
         <div class="menu-items">
           <div class="menu-items-body">
-            <!-- <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/books_1f4da.png" alt="Icon Kurikulum Dasar"> -->
             <h1 class="moji">📖</h1>
             <h3>Materi</h3>
           </div>
@@ -37,7 +41,6 @@
 
         <div class="menu-items">
           <div class="menu-items-body">
-            <!-- <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/books_1f4da.png" alt="Icon Kurikulum Dasar"> -->
             <h1 class="moji">👋</h1>
             <h3>Tutorial</h3>
           </div>
@@ -45,7 +48,6 @@
 
         <div class="menu-items">
           <div class="menu-items-body">
-            <!-- <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/books_1f4da.png" alt="Icon Kurikulum Dasar"> -->
             <h1 class="moji">⌛</h1>
             <h3>Evaluasi</h3>
           </div>
@@ -53,7 +55,6 @@
 
         <div class="menu-items">
           <div class="menu-items-body">
-            <!-- <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/books_1f4da.png" alt="Icon Kurikulum Dasar"> -->
             <h1 class="moji">📎</h1>
             <h3>Kredit</h3>
           </div>
@@ -61,36 +62,42 @@
 
         <div class="menu-items">
           <div class="menu-items-body">
-            <!-- <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/books_1f4da.png" alt="Icon Kurikulum Dasar"> -->
             <h1 class="moji">👨‍💻</h1>
             <h3>Pengembang</h3>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- kd -->
+
+    <div class="content baseline dn" id="page-kd">
+      <div class="menu">
+        <button class="btn-back" data-target="home">&laquo; Kembali</button>
+
+        <article>
+          <h1>Judul</h1>
+          <!-- <small>Subjudul</small> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde dolorum, ratione repellat numquam iusto asperiores obcaecati ullam praesentium. Totam sed vero, ipsa harum aut quasi maxime cupiditate beatae sit. Autem!</p>
+        </article>
+
+        <article>
+          <h1>Judul</h1>
+          <!-- <small>Subjudul</small> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde dolorum, ratione repellat numquam iusto asperiores obcaecati ullam praesentium. Totam sed vero, ipsa harum aut quasi maxime cupiditate beatae sit. Autem!</p>
+        </article>
+
+        <article>
+          <h1>Judul</h1>
+          <!-- <small>Subjudul</small> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde dolorum, ratione repellat numquam iusto asperiores obcaecati ullam praesentium. Totam sed vero, ipsa harum aut quasi maxime cupiditate beatae sit. Autem!</p>
+        </article>
+
+      </div>
+    </div>
   </section>
-
-  <script>
-    const emoji = {
-      '📚': 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/books_1f4da.png',
-      '📖' : 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/open-book_1f4d6.png',
-      '👋' : 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/waving-hand_1f44b.png',
-      '⌛' : 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/hourglass-done_231b.png',
-      '📎' : 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/paperclip_1f4ce.png',
-      '👨‍💻' : 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/man-technologist_1f468-200d-1f4bb.png',
-    };
-
-    document.querySelectorAll('.moji').forEach(el => {
-      if (emoji[el.innerText]) {
-        const img = new Image(64, 64);
-        img.src = emoji[el.innerText];
-        img.onload = () => {
-          el.replaceWith(img);
-        };
-      };
-    });
-  </script>
-  <!-- todo: apps script -->
-  <!-- <script src="/assets/js/app.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/navaid"></script> -->
+  <!-- apps script -->
+  <script src="/assets/js/app.js"></script>
 </body>
 </html>
