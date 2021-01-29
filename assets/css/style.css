@@ -131,32 +131,28 @@ article:hover {
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
 }
 
-.downup {
-  animation: downup .2s;
+.down-to-up {
+  animation: down-to-up .2s;
 }
 
-.updown {
-  animation: updown .2s;
+.up-to-down {
+  animation: up-to-down .2s;
 }
 
-@keyframes downup {
+@keyframes down-to-up {
   from {
-    filter: opacity(.5);
     transform: scale(.75);
   }
   to {
-    filter: opacity(1);
     transform: scale(1);
   }
 }
 
-@keyframes updown {
+@keyframes up-to-down {
   from {
-    filter: opacity(.5);
     transform: scale(1.25);
   }
   to {
-    filter: opacity(1);
     transform: scale(1);
   }
 }
