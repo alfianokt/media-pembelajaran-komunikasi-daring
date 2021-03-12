@@ -40,14 +40,14 @@
 
   document.querySelectorAll('.menu-items-body').forEach(el => {
     el.addEventListener('click', ()=>{
-      console.log(el,'Clicked', el.dataset.target);
+      // console.log(el,'Clicked', el.dataset.target);
 
       document.querySelector('#app-title').innerText = el_pages_title[el.dataset.target];
 
       Object.keys(el_pages_title).forEach((el_page) => {
 
         if (el_page == el.dataset.target) {
-          console.log(el_pages[el_page]);
+          // console.log(el_pages[el_page]);
 
           // show page
           el_pages[el_page].classList.remove('dn');
@@ -85,5 +85,47 @@
         }
       });
     });
+  });
+
+  const kunci = [0, 1, 0, 1, 0];
+  let jawaban = [null,null,null,null,null];
+  const uj = [
+    document.querySelectorAll('li[data-ujian="1"]'),
+    document.querySelectorAll('li[data-ujian="2"]'),
+    document.querySelectorAll('li[data-ujian="3"]'),
+    document.querySelectorAll('li[data-ujian="4"]'),
+    document.querySelectorAll('li[data-ujian="5"]'),
+  ];
+
+
+  uj.forEach((el_uj, i_uj) => {
+    el_uj.forEach((el, index) => {
+      el.addEventListener('click', () => {
+        uj[i_uj].forEach(el2 => el2.style.color = "black");
+        el.style.color = "blue";
+        jawaban[i_uj] = index;
+      });
+    });
+  });
+
+  const el_nilai = document.querySelector('#nilai');
+  el_nilai.addEventListener('click', () => {
+    let nilai = 0;
+
+    jawaban.forEach((el, index) => {
+      if (el != null && el == kunci[index]) {
+        nilai += 20;
+      }
+    })
+
+    el_nilai.innerText = 'Nilai : ' + nilai;
+  });
+
+  document.querySelector('#ujian-back').addEventListener('click', () => {
+    uj.forEach(el => {
+      el.forEach(el2 => el2.style.color = "black");
+    });
+
+    jawaban = [null,null,null,null,null];
   });
 })();
