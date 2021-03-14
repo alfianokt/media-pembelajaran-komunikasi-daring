@@ -127,5 +127,6 @@
     });
 
     jawaban = [null,null,null,null,null];
+    el_nilai.innerText = "Hitung Nilai";
   });
 })();
